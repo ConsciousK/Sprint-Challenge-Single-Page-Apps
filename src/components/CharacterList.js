@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from "./CharacterCard";
+import "../index.css";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -17,12 +18,14 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <section className="character-list grid-view">
-      <h2>
+    <section className="grid-view">
+      <div>
         {data.map(character => (
-          <div key={`${character.name}`}>Name: {`${character.name}`}</div>
+          <div key={`${character.name}`}>
+            <CharacterCard cardinfo={character}/>
+          </div>
         ))}
-      </h2>
+      </div>
     </section>
   );
 }
