@@ -2,6 +2,7 @@ import React from "react";
 import { Tab } from "semantic-ui-react";
 import WelcomePage from './WelcomePage'
 import CharacterList from "./CharacterList";
+import SearchForm from "./SearchForm";
 // TODO: Add missing menu/tabs/nav below
 
 // Review Semantic UI Component options for nav-like UI:
@@ -19,11 +20,10 @@ const panes = [
     render: () => <Tab.Pane><CharacterList /></Tab.Pane> },
 
     { menuItem: { icon: 'map', content: 'Locations', key: "loc"},
-    render: () => <Tab.Pane>Locations Page</Tab.Pane> },
+    render: () => <Tab.Pane><SearchForm /></Tab.Pane> },
 
     { menuItem: { icon: 'video camera', content: 'Episodes', key: "epi"},
-    render: () => <Tab.Pane>Episodes Page</Tab.Pane> },
-
+    render: () => <Tab.Pane>Episodes Page</Tab.Pane> }
   ]
   
   const TabNav = () => <Tab panes={panes} />
